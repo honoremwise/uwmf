@@ -94,3 +94,14 @@ $(function(){
     }
   });
 });
+//user login
+$(function(){
+  function getuserinputs(){
+    var usernameinput=$("#Useridname").val(); var passwordinput=$("#useridPassword").val();
+    if (usernameinput!="" && passwordinput!="") {return true;} else {return false;}
+  }
+  $("#loginuser").submit(function(){
+    var getsubmit=getuserinputs();
+    if (getsubmit==true){return true;} else {$("#errorlogin").html("Please fill out all fields!");return false;}
+  });
+});

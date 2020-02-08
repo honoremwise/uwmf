@@ -25,7 +25,7 @@
                         <p style="color: red;">
                           <?php
                           if (validation_errors()!="") {
-                            echo "Please fill all fields";
+                            echo "Please fill out all fields";
                           }
                           ?>
                           <?php if (isset($messageDisplay)){ echo $messageDisplay;}?>
@@ -55,7 +55,7 @@
                                     <input class="form-control" placeholder="ID/Passport number" name="userpassidname" type="text" id="userpassidname">
                                 </div>
                                 <div class="form-group">
-                                  <input type="text" name="userbirthdate" placeholder="Date of birth/format:yyy-mm-dd" class="form-control" id="userbirthdate" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter Date in format: yyy-mm-dd">
+                                  <input type="text" name="userbirthdate" placeholder="Date of birth/format:yyyy-mm-dd" class="form-control" id="userbirthdate" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter Date in format: yyy-mm-dd">
                                 </div>
                                 <input type="submit" name="registerloginreset" class="btn btn-lg btn-primary btn-block" value="Reset">
                             </fieldset>

@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['base_url'] = 'http://uwmf-ac.org/'; //uwmf-ac.org 
+$config['base_url'] = 'http://uwmf-ac.org/'; 
 
-$config['index_page'] = 'index.php';
+$config['index_page'] = 'index.php/';
 
 
 $config['uri_protocol']	= 'REQUEST_URI';
 
-$config['url_suffix'] = 'uwmf-online';
+$config['url_suffix'] = '';
 
 $config['language']	= 'english';
 

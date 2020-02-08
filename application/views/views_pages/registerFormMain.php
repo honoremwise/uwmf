@@ -6,104 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>UWMF MIS-student-application</title>
-    <link href="<?php  echo base_url() ?>css_scripts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php  echo base_url() ?>css_scripts/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <link href="<?php  echo base_url() ?>css_scripts/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="<?php  echo base_url() ?>css_scripts/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-    <link href="<?php  echo base_url() ?>css_scripts/dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="<?php  echo base_url() ?>css_scripts/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <title>UWMF-MIS-Application</title>
     <link rel="icon" href="<?php  echo base_url() ?>css_scripts/vendor/datatables/images/test.png" width="200" height="150" class="img-circle">
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/jquery/jquery.min.js"></script>
+    <link href="<?php echo base_url(); ?>css_scripts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css_scripts/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css_scripts/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css_scripts/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link rel="icon" href="<?php  echo base_url() ?>css_scripts/vendor/datatables/images/test.png" width="200" height="150" class="img-circle">
+    <link href="<?php echo base_url(); ?>css_scripts/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="<?php echo base_url(); ?>css_scripts/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="<?php  echo base_url() ?>css_scripts/js/custom.js"></script>
-  	<style media="screen">
-  		.spanstyle{
-  			color: red;
-  		}
-  	</style>
+    <script type="text/javascript">
+    function validMessage(){
+      alert("Data successfuly saved");
+    }
+    </script>
+    <style media="screen">
+      .spanstyle{
+        color: red;
+      }
+    </style>
 </head>
 <body>
     <div id="wrapper">
-        <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+          <img class="navbar-brand" src="<?php echo base_url();?>css_scripts/vendor/datatables/images/test.png" alt="logo">
             <div class="navbar-header">
-              <img class="navbar-brand" src="<?php echo base_url();?>css_scripts/vendor/datatables/images/test.png" alt="logo">
-                <a class="navbar-brand"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li class="divider"></li>
-                        <li><a href="<?php echo base_url();?>index.php/LoadPages/ResumeApplication"><i class="fa fa-sign-out fa-fw"></i> Login</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#">Apply<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Manage<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#getaccount" data-toggle="modal" data-target="#getaccount"><i class="fa fa-user fa-fw"></i>&nbsp;Create account</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url();?>index.php/LoadPages/ResumeApplication"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+                                    <a href="<?php echo site_url();?>LoadPages/ResumeApplication"><i class="fa fa-sign-out fa-fw"></i> Login</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                          <a href="#"><i class="fa fa-bar"></i>Contact us<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level">
+                            <li><a href="#">Tel:+250781403982</a>
+                            </li>
+                            <li><a href="#">Email:</a>
+                            </li>
+                            </li>
+                          </ul>
+                        </li>
                     </ul>
                 </div>
-                <div class="sidebar-nav navbar-collapse">
-                  <ul class="nav">
-                    <li>
-                      <a href="#">Contact Us</a>
-                      <ul class="nav nav-second-level">
-                        <li>
-                          <a href="#">Tel:+250781403982</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
                 <!-- /.sidebar-collapse -->
-            </div>
+            </div><!-- end here -->
             <!-- /.navbar-static-side -->
         </nav>
+
         <div id="page-wrapper">
-          <div class="form_error">
-            <?php echo validation_errors('<div class="" style="color:red; padding-top:10px;">','</div>');?>
-          </div>
-          <div style="color:red;">
-            <?php if (isset($erroruser)) {
-              echo $erroruser;
-            }?>
-          </div>
             <div class="row">
-              <div class="col-lg-12">
-                <?php
-                if (isset($account)) {
-                  ?>
-                  <div class="alert alert-success" style="height:5px;">
-                    <?php echo $account;
-                     ?>
-                  </div>
+              <div class="form_error">
+                <?php echo validation_errors('<div class="" style="color:red; padding-top:10px;">','</div>');?>
+              </div>
+              <div style="color:red;">
+                <?php if (isset($erroruser)) {
+                  echo $erroruser;
+                }?>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
                   <?php
-                }
-                 ?>
+                  if (isset($account)) {
+                    ?>
+                    <div class="alert alert-success" style="height:5px;">
+                      <?php echo $account;
+                       ?>
+                    </div>
+                    <?php
+                  }
+                   ?>
+                </div>
               </div>
                 <div class="col-lg-12">
-                    <h1 class="page-header">Student Application Portal</h1>
+                  <h3 class="page-header">Student application</h3>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -129,7 +122,7 @@
                                             In 2015 UWMF launched the graduate school with the Master of Divinity program.UWMF is owned and sponsored by CLWMF organization.
                                             UWMF has also applied to Association of Christian Theological Education in Africa(ACTEA) based in Nairobi; for accreditation of its theological programs and still at affiliation stage.
                                             <h3>Vision of UWMF</h3>
-                                            The vision of UWMF is to be a theological institution that provides excellent spiritual, academic and hoslistic training to the church for transformation of Africa.
+                                            The vision of UWMF is to be a theological institution that provides excellent spiritual, academic and holistic training to the church for transformation of Africa.
                                             <h3>Mission Statement</h3>
                                             The mission of UWMF is exalting God and serving His church through availing basic, standard and advanced Christian education centered on Holy Scripture, thus preparing faithful and transformed servants who preach Jesus Christ and spread Scripture Holiness and transformation throughout Africa and the world.
                                           </div>
@@ -152,7 +145,7 @@
                                               <h4 class="modal-title">Create account</h4>
                                             </div>
                                             <div class="modal-body">
-                                              <form name="userregistermain" action="<?php echo base_url();?>index.php/SaveRegister/RegisterMainData" id="userregistermain" method="post">
+                                              <form name="userregistermain" action="<?php echo site_url();?>SaveRegister/RegisterMainData" id="userregistermain" method="post">
                                                   <div class="form-group">
                                                       <label for="inputEmail">Email</label>
                                                       <input type="email" class="form-control" name="CandidateEmail" id="CandidateEmail" required>
@@ -177,7 +170,7 @@
                                                   </select>
                                                   <span id="program_err_msg" class="spanstyle"></span>
                                                 </div>
-                                                  <input type="submit" name="" value="Create Account"class="btn btn-primary" id="btnsubmit">
+                                                  <input type="submit" name="" value="Create Account"class="btn btn-outline btn-primary" id="btnsubmit">
                                               </form>
                                             </div>
                                             <div class="modal-footer">
@@ -191,36 +184,16 @@
                           </div>
                         </div>
                       </div>
-          </div>
+                    </div>
+            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
     </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    <script type="text/javascript" src="<?php  echo base_url() ?>css_scripts/js/custom.js"></script>
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="<?php  echo base_url() ?>css_scripts/vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="<?php  echo base_url() ?>css_scripts/dist/js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-    </script>
+    <script type="text/javascript" src="<?php  echo base_url() ?>css_scripts/vendor/jquery/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>css_scripts/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>css_scripts/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>css_scripts/vendor/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>css_scripts/vendor/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>css_scripts/data/morris-data.js"></script>
+    <script src="<?php echo base_url(); ?>css_scripts/dist/js/sb-admin-2.js"></script>
 </body>
 </html>

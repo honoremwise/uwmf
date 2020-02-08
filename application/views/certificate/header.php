@@ -39,7 +39,7 @@
                               <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                               </li>
                               <li class="divider"></li>
-                              <li><a href="<?php echo base_url();?>index.php/Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                              <li><a href="<?php echo site_url();?>Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                               </li>
                           </ul>
                       </li>

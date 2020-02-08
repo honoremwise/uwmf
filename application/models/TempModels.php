@@ -45,19 +45,19 @@ class TempModels extends CI_Model
     //get the number of candidates in the database of the same date to assign a reference number
     $code=$data['program_code'];
     $yearOnly=substr($data['year_registered'],0,4);
-    $gets=$this->db->query("SELECT * FROM candidates WHERE program_code='$code' AND substr(year_registered,1,4)='$yearOnly'");
+    $gets=$this->db->query("SELECT * from candidates WHERE substr(year_registered,1,4)='$yearOnly' AND program_code='$code'");
     $elements=$gets->result_array();
-    $num_elements=$gets->num_rows();
+    $num_elements=count($elements);
     $num_elements++;
-    $reference=$yearOnly.$num_elements;
+    $reference=$yearOnly.$code.$num_elements;
     // query to save data in the database
-    $data['reference_no']=$data['program_code'].$reference;
-     $this->db->insert('candidates',$data);
+    $data['reference_no']=$reference;
+    $this->db->insert('candidates',$data);
      if ($this->db->affected_rows()>0) {
        //make a candidate an applicant
        return array($reference,$data['program_code']);
-     } else {
-       return array($reference,$data['program_code']);
+     } else{
+       return false;
      }
 	}//end of function definition
   public function saveApplication($data)

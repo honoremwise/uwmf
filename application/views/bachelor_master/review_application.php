@@ -67,7 +67,7 @@ if ($yearOnly==$currentyear) {?>
                                         <li><a href="#work" data-toggle="tab">Work Experience</a>
                                         </li>
                                         <li>
-                                          <a href="<?php echo base_url();?>index.php/SubmitApplication" id="submitapplicationreview" class="">Submit</a>
+                                          <a href="<?php echo site_url();?>SubmitApplication" id="submitapplicationreview" class="">Submit</a>
                                         </li>
                                       </ul>
                                       <div class="tab-content">
@@ -75,7 +75,7 @@ if ($yearOnly==$currentyear) {?>
                                           <div class="col-xs-10 col-sm-10 col-md-12 col-lg-12">
                                             <?php if (!($yearOnly==$currentyear)){?>
                                               <h5>Please click update if you wish to make changes</h5>
-                                              <a href="<?php echo base_url(); ?>index.php/Update?submitMainupdate" id="submitMainupdate" class="btn btn-primary">Update</a><hr>
+                                              <a href="<?php echo site_url(); ?>Update?submitMainupdate" id="submitMainupdate" class="btn btn-outline btn-primary">Update</a><hr>
                                             <?php }?>
                                             <form class="" method="post">
                                               <div class="form-group col-xs-10 col-sm-10 col-md-4 col-lg-4">
@@ -109,7 +109,7 @@ if ($yearOnly==$currentyear) {?>
                                         <div class="tab-pane fade" id="file-uploads">
                                           <?php if (!($yearOnly==$currentyear)){?>
                                             <h5>Please click update if you wish to make changes in uploads</h5>
-                                            <a href="<?php echo base_url(); ?>index.php/Update?fileseupdate" id="fileseupdate" class="btn btn-primary">Update</a><hr>
+                                            <a href="<?php echo site_url(); ?>Update?fileseupdate" id="fileseupdate" class="btn btn-outline btn-primary">Update</a><hr>
                                           <?php }?>
                                           <?php require_once(APPPATH.'views/views_pages/viewfiles.php'); ?>
                                         </div>
@@ -117,7 +117,7 @@ if ($yearOnly==$currentyear) {?>
                                         <div class="tab-pane fade" id="experience-details">
                                           <?php if (!($yearOnly==$currentyear)){?>
                                             <h5>Please click update if you wish to make changes</h5>
-                                            <a href="<?php echo base_url(); ?>index.php/Update?churchexperienceupdate" id="churchexperienceupdate" class="btn btn-primary">Update</a><hr>
+                                            <a href="<?php echo site_url(); ?>Update?churchexperienceupdate" id="churchexperienceupdate" class="btn btn-outline btn-primary">Update</a><hr>
                                           <?php }?>
                                           <?php require_once(APPPATH.'views/views_pages/church_experience.php'); ?>
                                         </div>
@@ -125,7 +125,7 @@ if ($yearOnly==$currentyear) {?>
                                         <div class="tab-pane fade" id="work">
                                           <?php if (!($yearOnly==$currentyear)){?>
                                             <h5>Please click update if you wish to make changes</h5>
-                                            <a href="<?php echo base_url(); ?>index.php/Update?workexperienceupdate" id="workexperienceupdate" class="btn btn-primary">Update</a><hr>
+                                            <a href="<?php echo site_url(); ?>Update?workexperienceupdate" id="workexperienceupdate" class="btn btn-outline btn-primary">Update</a><hr>
                                           <?php }?>
                                           <?php require_once(APPPATH.'views/views_pages/job_experience.php'); ?>
                                         </div>
@@ -133,10 +133,10 @@ if ($yearOnly==$currentyear) {?>
                                           <div class="col-xs-10 col-sm-10 col-md-12 col-lg-12">
                                             <?php if (!($yearOnly==$currentyear)){?>
                                               <h5>Please click update if you wish to make changes</h5>
-                                              <a href="" id="#updateprogram" data-toggle="modal" data-target="#updateprogram" class="btn btn-primary">Update</a>
+                                              <a href="" id="#updateprogram" data-toggle="modal" data-target="#updateprogram" class="btn btn-outline btn-primary">Update</a>
                                             <?php }?>
                                             <h5>Program and Branch to attend</h5>
-                                            <form class="" action="index.html" method="post">
+                                            <form method="post">
                                               <div class="form-group col-xs-10 col-sm-10 col-md-4 col-lg-4">
                                                 <label for="program">Program to attend</label>
                                                 <input type="text" name="" value="<?php echo $program; ?>" class="form-control" id="proinput1">
@@ -156,7 +156,7 @@ if ($yearOnly==$currentyear) {?>
                                           <div class="col-xs-10 col-sm-10 col-md-12 col-lg-12">
                                             <?php if (!($yearOnly==$currentyear)){?>
                                               <h5>Please click update if you wish to make changes</h5>
-                                              <a href="<?php echo base_url(); ?>index.php/Update?submitMainupdate" id="submitMainupdate" class="btn btn-primary">Update</a><hr>
+                                              <a href="<?php echo site_url(); ?>Update?submitMainupdate" id="submitMainupdate" class="btn btn-outline btn-primary">Update</a><hr>
                                             <?php }
                                             require_once(APPPATH.'views/views_pages/personaldata.php'); ?>
                                           </div>
@@ -171,7 +171,7 @@ if ($yearOnly==$currentyear) {?>
                                                <h4 class="modal-title">Update Program to attend at UWMF</h4>
                                              </div>
                                              <div class="modal-body">
-                                               <form action="<?php echo base_url();?>index.php/Update/updateprogram" method="post">
+                                               <form action="<?php echo site_url();?>Update/updateprogram" method="post">
                                                  <div class=" form-group">
                                                    <label for="program">Program To attend</label>
                                                    <select name="program" class="form-control" id="program">

@@ -99,13 +99,13 @@ class SaveRegister extends CI_Controller
 	public function saveNotification()
 	{
 		// validate input
-		$this->form_validation->set_rules('useridnumber','','required|trim');
+		$this->form_validation->set_rules('referenceid','','required|trim');
 		$this->form_validation->set_rules('msgidrequest','','required|trim');
 		if ($this->form_validation->run()==TRUE) {
 			//save notification
 			$data=array(
 			'sender'=>$this->input->post('Useridname'),
-			'receiver'=>$this->input->post('useridnumber'),
+			'receiver'=>$this->input->post('referenceid'),
 			'date'=>date('Y-m-d'),
 			'message'=>$this->input->post('msgidrequest'),
 		);
@@ -216,25 +216,33 @@ public function changePassword()
 				);
 				$this->load->model('Register');
 				$update=$this->Register->changePassword($data);
-				if ($update==TRUE) {
+				if ($update==TRUE){
 					$this->load->view('index.php');
-				} else {
+				} else{
 					$data=array(
 						'error'=>'Unable to change Password,Try again',
 					);
 					$this->load->view('user/index.php',$data);
 				}
-				}else {
+				}else{
 					$data=array(
 						'error'=>'Password must be the combination of alphabets and numbers',
 					);
 					$this->load->view('user/index.php',$data);
 				}
-			}else {
+			}else{
 				$data = array('error' =>'An error occured, Please try again later');
 				$this->load->view('user/index.php',$data);
 			}
-}//end of function
-}
+		}
+	}//end of function
+	public function users()
+	{
+		//get user position submitted
+		$position=$this->input->post('userid');
+		$cond=$position;
+		$data=$this->SelectModels->getuser($cond);
+		echo json_encode($data);
+	}
 }
 ?>

@@ -28,12 +28,12 @@
                               <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                           </a>
                           <ul class="dropdown-menu dropdown-user">
-                              <li><a href="#getprofile" data-toggle="modal" data-target="#getprofile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                              <li><a href="<?php echo site_url();?>UserLoginAuthentication/showData" target="_blank"><i class="fa fa-user fa-fw"></i> My data</a>
                               </li>
                               <li><a href="#getpassword" data-toggle="modal" data-target="#getpassword"><i class="fa fa-user fa-fw"></i> Change Password</a>
                               </li>
                               <li class="divider"></li>
-                              <li><a href="<?php echo base_url();?>index.php/Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                              <li><a href="<?php echo site_url();?>Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                               </li>
                           </ul>
                       </li>

@@ -81,10 +81,10 @@ require_once(APPPATH.'views/views_pages/pageheader.php');
 					<!-- submit button -->
 					<div class="clearfix"></div>
 					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<input type="submit" name="submitMainForm" value="Save and Continue" class="btn btn-primary pull-right">
+						<input type="submit" name="submitMainForm" value="Save and Continue" class="btn btn-outline btn-primary pull-right">
 					</div>
 					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<a href="<?php echo base_url();?>index.php/Save_step?workapplication" id="workcertificate"class="btn btn-primary pull-left">Go next</a>
+						<a href="<?php echo base_url();?>Save_step?workapplication" id="workcertificate"class="btn btn-outline btn-primary pull-left">Go next</a>
 					</div>
 				</form>
 			</div>

@@ -105,6 +105,11 @@ class UserLoginAuthentication extends CI_Controller
 					$this->load->view('index.php',$data);
 				}
 			}
+		}//end of function definition
+		public function showData()
+		{
+			// load view page to view student basic data
+			$this->load->view('user/reviewdata');
 		}
 }
 ?>

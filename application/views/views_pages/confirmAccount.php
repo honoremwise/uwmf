@@ -16,7 +16,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                   <center>
-                    <img src="<?php  echo base_url() ?>css_scripts/vendor/datatables/images/test.png" width="200" height="150" class="img-circle">
+                    <img src="<?php  echo base_url() ?>css_scripts/vendor/datatables/images/test1.png" width="200" height="150" class="img-circle">
                   </center>
                     <div class="panel-heading">
                       <h5>Create account/Choose a Password</h5>

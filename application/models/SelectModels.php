@@ -188,6 +188,10 @@ class SelectModels extends CI_Model
 		} else {
 			return false;
 		}
+	}//end of function
+	public function getuser($cond)
+	{
+		return $this->db->query("SELECT * FROM users WHERE user_respo_id='$cond' AND status='Active'")->result();
 	}
 }
 ?>

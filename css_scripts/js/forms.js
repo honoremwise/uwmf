@@ -10,25 +10,12 @@ $(function(){
   var error_graduatedate=false;var error_schoolname=false;var error_schoollocation=false;var error_degree=false;
 //bind events to form elements
   //$("#CandidateEmail").prop("disabled",true);
-  $("#CandidateFname").focusout(function(){check_firstname();});
-  $("#CandidateLname").focusout(function(){check_lastname();});
-  $("#CandidatePhone").focusout(function(){check_telephone();});
-  $("#CandidateIDnumber").focusout(function(){check_passport();});
-  $("#CandidateGender").focusout(function(){check_gender();});
-  $("#CandidateBirthDate").focusout(function(){check_date();});
-  $("#CandidateNationality").focusout(function(){check_nationality();});
-  $("#CandidateProvince").focusout(function(){check_pro();});
-  $("#CandidateDistrict").focusout(function(){check_dist();});
-  $("#candidateaddress").focusout(function(){check_address()});
-  $("#Candidatebranch").focusout(function(){check_branch();});
-  $("#Candidateenglish").focusout(function(){check_english()});
-  $("#CandidateNative").focusout(function(){check_native()});
-  $("#Candidatestudy").focusout(function(){check_studylevel()});
-  $("#candidatemajor").focusout(function(){check_subject()});
-  $("#candidategraduation").focusout(function(){check_graduateDate();});
-  $("#candidateschool").focusout(function(){check_school();});
-  $("#candidatelocation").focusout(function(){check_schoollocation();});
-  $("#studydegree").focusout(function(){check_degree();});
+  $("#CandidateFname").focusout(function(){check_firstname();});$("#CandidateLname").focusout(function(){check_lastname();});$("#CandidatePhone").focusout(function(){check_telephone();});
+  $("#CandidateIDnumber").focusout(function(){check_passport();});$("#CandidateGender").focusout(function(){check_gender();});$("#CandidateBirthDate").focusout(function(){check_date();});
+  $("#CandidateNationality").focusout(function(){check_nationality();});$("#CandidateProvince").focusout(function(){check_pro();});$("#CandidateDistrict").focusout(function(){check_dist();});
+  $("#candidateaddress").focusout(function(){check_address()});$("#Candidatebranch").focusout(function(){check_branch();});$("#Candidateenglish").focusout(function(){check_english()});
+  $("#CandidateNative").focusout(function(){check_native()});$("#Candidatestudy").focusout(function(){check_studylevel()});$("#candidatemajor").focusout(function(){check_subject()});
+  $("#candidategraduation").focusout(function(){check_graduateDate();});$("#candidateschool").focusout(function(){check_school();});$("#candidatelocation").focusout(function(){check_schoollocation();});$("#studydegree").focusout(function(){check_degree();});
   function testvalue(value) {
     var splitvalues=value.split("");
     var regex =new RegExp(/^([a-zA-Z]{1})$/i);
@@ -415,26 +402,8 @@ function submitform() {
   check_firstname();check_lastname();check_telephone();check_passport();check_gender();check_degree();
   check_date();check_nationality();check_pro();check_dist();check_address();check_branch();check_schoollocation();
   check_english();check_native();check_studylevel();check_subject();check_graduateDate();check_school();
-  var errors=[error_fname,
-  error_lname,
-  error_email,
-  error_telephone,
-  error_idnumber,
-  error_gender,
-  error_date,
-  error_nationality,
-  error_province,
-  error_district,
-  error_address,
-  error_branch,
-  error_english,
-  error_native,
-  error_level,
-  error_graduatedate,
-  error_fieldstudy,
-  error_schoolname,
-  error_schoollocation,
-  error_degree];
+  var errors=[error_fname,error_lname,error_email,error_telephone,error_idnumber,error_gender,error_date,error_nationality,error_province,
+  error_district,error_address,error_branch,error_english,error_native,error_level,error_graduatedate,error_fieldstudy,error_schoolname,error_schoollocation,error_degree];
   var checkerrors=0;
   for (var i = 0; i < errors.length; i++) {
     if (errors[i]==true) {
@@ -452,7 +421,9 @@ $("#userapplicationmain").submit(function(){
   if (result==true) {
     return true;
   }else {
+    alert("Please enter in all fields!");
     return false;
   }
 });
+//
 });

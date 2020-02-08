@@ -149,7 +149,7 @@ class Adminuser extends CI_Controller
   {
     $this->form_validation->set_rules('fileusetype','File title','required|trim|numeric');
     $test=$this->form_validation->run();
-    if (isset($_SESSION['adminuserlogin']) || $test==true){
+    if (isset($_SESSION['adminuserlogin']) && $test==true){
       //configure file uploads
       $config['upload_path']   ='./files';
       $config['allowed_types'] ='pdf';
@@ -243,7 +243,17 @@ class Adminuser extends CI_Controller
         }
       }
     }else {
-      $this->load->view('adminuser/home.php');
+      if (isset($_SESSION['adminuserlogin'])) {
+        $data=array(
+          'users'=>$this->SelectModels->getusers(),
+          'positions'=>$this->SelectModels->getpositions(),
+          'files'=>$this->SelectModels->getfiles(),
+          'recorderror'=>'file not saved',
+        );
+        $this->load->view('admin/index.php',$data);
+      } else {
+        $this->load->view('admin/home.php');
+      }
     }
   }//end of function
   public function statusblock()
@@ -366,10 +376,10 @@ class Adminuser extends CI_Controller
   	$mail->Host = "smtp.gmail.com";
   	$mail->Port = 587; // or 587
   	$mail->IsHTML(true);
-  	$mail->Username = "hmwiseneza@gmail.com";
+  	$mail->Username = "superuser.uwmf@gmail.com";
   	$mail->Password = "0781549903";
   	$mail->SetFrom($to);
-  	$email->SetFromName='MWISENEZA Honore';
+  	$email->SetFromName='University of World Mission';
   	$mail->Subject = $subj;
   	$mail->Body = $message;
   	$mail->AddAddress($to);

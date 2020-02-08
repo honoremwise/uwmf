@@ -98,7 +98,7 @@ class Files extends CI_Controller
         if (isset($_FILES[$name]['name']) && $_FILES[$name]['name']!="") {
           if (in_array($mime,$allowed_mime_type_arr)) {
             return true;
-          }else {
+          }else{
             $this->form_validation->set_message('checkfile', 'Please select only  file of type pdf');
             return false;
           }

@@ -1,7 +1,6 @@
 <?php
-require_once(APPPATH.'views/certificate/include.php');
-require_once(APPPATH.'views/certificate/datareview.php');
 require_once(APPPATH.'views/views_pages/pageheader.php');
+require_once(APPPATH.'views/certificate/datareview.php');
 if (empty($fname)) {
   $tel="";
   $date="";
@@ -9,7 +8,6 @@ if (empty($fname)) {
   $gender="";
 }
 ?>
-
 	<div class="container">
     <div class="row">
 			<div class="col-md-4"></div>
@@ -32,7 +30,7 @@ if (empty($fname)) {
 				?>
 			</div>
 			<div class="row jumbotron-content" style="width:100%;">
-				<form role="form" name="userapplicationmain" action="<?php echo base_url();?>index.php/Bach_master_load_data/" method="post" id="userapplicationmain">
+				<form role="form" name="userapplicationmain" action="<?php echo site_url();?>Bach_master_load_data/" method="post" id="userapplicationmain">
 					<div class="form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
 						<label for="firstname">Firstname</label><span id="error_fname"></span>
 						<input type="text" name="CandidateFname" class="form-control" value="<?php echo $fname; ?>" id="CandidateFname" required>
@@ -41,7 +39,6 @@ if (empty($fname)) {
 						<label for="lastname">Lastname</label><span id="error_lname"></span>
 						<input type="text" name="CandidateLname" class="form-control" value="<?php echo $lname; ?>" id="CandidateLname" required>
 					</div>
-
 					<div class=" form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
 						<label for="email">Email</label><span id="error_email"></span>
 						<input type="email" name="CandidateEmail" class="form-control" value="<?php echo $email; ?>" id="CandidateEmail" required>
@@ -115,7 +112,6 @@ if (empty($fname)) {
 						<label for="studyLevel">Previous Level</label><span id="error_level"></span>
 						<select class="form-control" name="Candidatestudy" id="Candidatestudy">
 							<option value="<?php echo $edu; ?>"><?php echo $edu; ?></option>
-							<option value="High school">High school completion</option>
 							<option value="Bachelors">Bachelors degree</option>
 							<option value="Masters">Masters degree</option>
 						</select>
@@ -128,7 +124,7 @@ if (empty($fname)) {
 
 					<div class="form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
 						<label for="graduatedate">Date graduated</label><span id="error_graduatedate"></span>
-						<input type="text" name="candidategraduation" class="form-control" placeholder="yyy-mm-dd" value="<?php echo $grdate; ?>" id="candidategraduation"  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter Date in format: yyyy-mm-dd" required>
+						<input type="text" name="candidategraduation" class="form-control" placeholder="yyyy-mm-dd" value="<?php echo $grdate; ?>" id="candidategraduation"  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter Date in format: yyyy-mm-dd" required>
 					</div>
 
 					<div class="form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
@@ -152,10 +148,10 @@ if (empty($fname)) {
 					<!-- submit button -->
 					<div class="clearfix"></div>
 					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <input type="submit" name="submitMainData" value="Save and Continue" class="btn btn-primary pull-right">
+            <input type="submit" name="submitMainData" value="Save and Continue" class="btn btn-outline btn-primary pull-right">
 					</div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="<?php echo base_url();?>index.php/save_step?pageapplication" class="btn btn-primary pull-left">Go Next</a>
+            <a href="<?php echo site_url();?>save_step?pageapplication" class="btn btn-outline btn-primary pull-left">Go Next</a>
           </div>
 				</form>
 			</div>

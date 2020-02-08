@@ -1,4 +1,4 @@
-<?php include('include.php');
+<?php
 require_once(APPPATH.'views/certificate/datareview.php');
 require_once(APPPATH.'views/views_pages/pageheader.php');
 require_once(APPPATH.'views/views_pages/getdownloads.php');
@@ -23,11 +23,14 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 						if (isset($minimum_upload)) {
 							echo $minimum_upload;
 						}
+						if (isset($error)) {
+							echo $error;
+						}
 						?>
 					</div>
 					<div class="row">
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<form action="<?php echo base_url();?>index.php/IdentityFiles/saveFiles"  method="post" enctype="multipart/form-data">
+							<form action="<?php echo site_url();?>Uploads/saveid"  method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="candidateIDnumber">Identity/Passport</label>
 									<input type="file" name="identity" class="form-control">
@@ -43,10 +46,10 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							</form>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<form  action="<?php echo base_url();?>index.php/PictureFiles/saveFiles" method="post" enctype="multipart/form-data">
+							<form  action="<?php echo site_url();?>Uploads/saveid" method="post" enctype="multipart/form-data">
               <div class="form-group">
 								<label for="profile ">Profile Picture</label>
-								<input type="file" name="picture" class="form-control">
+								<input type="file" name="photo" class="form-control">
 							</div>
 							<input type="submit" class="btn  btn-primary btn-sm" value="Upload file">
 							<span>
@@ -59,9 +62,9 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							</form>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<form action="<?php echo base_url();?>index.php/DegreeFiles/saveFiles"  method="post" enctype="multipart/form-data">
+							<form action="<?php echo site_url();?>Uploads/saveid"  method="post" enctype="multipart/form-data">
 							 <div class="form-group">
-								 <label for="candidateDiploma">Degree/Diploma</label>
+								 <label for="candidateDiploma">Degree/Diploma|Advanced certificate</label>
 								 <input type="file" name="candidatediploma" class="form-control">
 							 </div>
 							 <input type="submit" class="btn  btn-primary btn-sm" value="Upload file">
@@ -74,7 +77,7 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							</form>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<form action="<?php echo base_url();?>index.php/MotivationFiles/saveFiles"  method="post" enctype="multipart/form-data">
+							<form action="<?php echo site_url();?>Uploads/saveid"  method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="candidatemotivation">Autobiographical Essay</label>
 									<input type="file" name="candidatemotivation" class="form-control">
@@ -89,7 +92,7 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							</form>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<form action="<?php echo base_url();?>index.php/BirthcertificateFiles/saveFiles"  method="post" enctype="multipart/form-data">
+							<form action="<?php echo site_url();?>Uploads/saveid"  method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="candidateBirth">Birth Certificate</label>
 									<input type="file" name="candidateBirth" class="form-control">
@@ -104,8 +107,8 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							</form>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<form action="<?php echo base_url();?>index.php/RecommendationFiles/saveFiles" method="post" enctype="multipart/form-data">
 								<div class="form-group">
+									<form action="<?php echo site_url();?>Uploads/saveid" method="post" enctype="multipart/form-data">
 									<label for="candidateBirth">Recommendation</label>
 									<input type="file" name="candidateRecomm" class="form-control">
 								</div>
@@ -124,9 +127,9 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 					</div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-							<form class="" action="<?php echo base_url();?>index.php/TranscriptFiles/saveFiles" method="post" enctype="multipart/form-data">
+							<form class="" action="<?php echo site_url();?>Uploads/saveid" method="post" enctype="multipart/form-data">
 								<div class="form-group">
-									<label for="transcriptupload">Academic transcripts</label><span>Upload all transcripts within a single file if you have different copies,zipped files are not allowed</span>
+									<label for="transcriptupload">Academic transcripts|reports</label><span>Upload all transcripts within a single file if you have different copies,zipped files are not allowed</span>
 									<input type="file" name="candidatereport" class="form-control">
 								</div>
 								<input type="submit" class="btn  btn-primary btn-sm" value="Upload file">
@@ -142,10 +145,10 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							</form>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-							<form class="" action="<?php echo base_url();?>index.php/TranscriptFiles/savefaith" method="post" enctype="multipart/form-data">
+							<form class="" action="<?php echo site_url();?>Uploads/saveid" method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="statement of faith">Statement of faith</label><span>Upload a signed Statement of faith found on our downloads page &nbsp;<a href="#addfile" data-toggle="modal" data-target="#addfile">Download</a></span>
-									<input type="file" name="candidatereport" class="form-control">
+									<input type="file" name="candidatestatement" class="form-control">
 								</div>
 								<input type="submit" class="btn  btn-primary btn-sm" value="Upload file">
 								<span>
@@ -166,7 +169,7 @@ require_once(APPPATH.'views/views_pages/getdownloads.php');
 							<?php echo form_open('application_Files/'); ?>
 							<form enctype="multipart/form-data" method="post">
 								<input type="hidden" value="6" class="form-control" name="uploadnumber" id="uploadnumber"> <br>
-								<input type="submit" class="btn btn-primary pull-right" value="Go Next" style="margin-left:90px;">
+								<input type="submit" class="btn btn-outline btn-primary pull-right" value="Go Next" style="margin-left:90px;">
 							</form>
 						</div>
 						<div class="col-xs-10 col-sm-10 col-md-3 col-lg-3"></div>

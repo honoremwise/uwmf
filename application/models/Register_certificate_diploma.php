@@ -29,10 +29,10 @@ class Register_certificate_diploma extends CI_Model
 		    }
 				switch ($program) {
 					case '01':
-						$this->load->view('views_pages/cert_diploma_program_uploads.php');
+						$this->load->view('views_pages/bachelor_master_program_uploads.php');
 						break;
 					case '02':
-						$this->load->view('views_pages/cert_diploma_program_uploads.php');
+						$this->load->view('views_pages/bachelor_master_program_uploads.php');
 						break;
 					case '03':
 							$this->load->view('views_pages/bachelor_master_program_uploads.php');

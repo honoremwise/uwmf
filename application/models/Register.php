@@ -67,7 +67,7 @@ class Register extends CI_Model
 			$prog=$data['program_code'];
 			//send email to the applicant
 			//$message = $this->load->view('tempuser/sendaccount.php', '', TRUE);
-			$message="application has been submitted";
+			$message="Application has been submitted";
 			$to=$_SESSION['username'];
 			$this->sendApplication($to,$subj, $message,$prog);
 		}

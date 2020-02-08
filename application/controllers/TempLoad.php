@@ -2,7 +2,7 @@
 //load send mail class files
 use PHPMailer\PHPMailer\PHPMailer;
 require_once(APPPATH.'views/mails/vendor/autoload.php');
-require_once(APPPATH.'views/mails/mail.php');
+//require_once(APPPATH.'views/mails/mail.php');
 /**
  * Only this controller is for user to register existing students who were not applied using system
  */
@@ -480,7 +480,7 @@ class TempLoad extends CI_Controller
     // check if session is valid
     if (!empty($reference) && !empty($program) && !empty($year)){
       //submit application
-			$reference=$program.$reference;
+			$reference=$reference;
       $data=array('reference_no' => $reference,
       'program_code'=>$program,
       'year_last_application'=>$year,
@@ -978,7 +978,6 @@ public function universitydata()
 	} else {
 		$this->load->view('tempuser/index.php');
 	}
-
 }
 }
 ?>

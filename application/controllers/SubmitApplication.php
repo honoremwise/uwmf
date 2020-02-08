@@ -27,11 +27,20 @@ class SubmitApplication extends CI_Controller
        'number_of_application'=>1,
       );
       $this->load->model('Register');
-      $this->Register->saveApplication($data);
+      $this->load->model('StartApp');
+      //check if application is currently open or closed
+      $this->load->model('StartApp');
+      $check=$this->StartApp->checkApplication();
+      if ($check==true){
+        $this->Register->saveApplication($data);
+      } else {
+        $data = array('application' =>'Application has ended');
+        $this->load->view('index.php',$data);
+      }
     }else {
       $data=array('session' => 'You are logged out', );
       $this->load->view('views_pages/home.php',$data);
     }
-  }
+  }//end of function
 }
  ?>

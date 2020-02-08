@@ -6,8 +6,8 @@ $pass=$CI->db->password;
 $user=$CI->db->username;
 $myconnection= mysqli_connect($host,$user,$pass);
 if ($myconnection && mysqli_select_db($myconnection,'uwmf') && !empty($_SESSION['username'])){
-  require_once(APPPATH.'views/certificate/include.php');
   require_once(APPPATH.'views/user/header.php');
+  require_once(APPPATH.'views/certificate/include.php');
   //get student registration number
   $user=$_SESSION['username'];
   $regno=$CI->db->query("SELECT * FROM students JOIN candidates USING(reference_no) WHERE candidates.candidate_email='$user'");
@@ -46,7 +46,8 @@ if (!empty($reg)){
     $marks=$sqlval->result();
     return $marks;
   }else {
-    return array('module_code'=>'','module_name'=>'','points'=>'','letter'=>'','addition_date'=>'');
+    //return array('module_code'=>'','module_name'=>'','points'=>'','letter'=>'','addition_date'=>'');
+    return false;
   }
 }else {//no such session
   return false;
@@ -58,7 +59,8 @@ return $CI->db->query("SELECT * FROM students_payment join payments USING(id) wh
 }
 function getusers($CI)
 {
-return $CI->db->query("SELECT * from users join users_responsabilities USING(user_respo_id) WHERE users.email!='superuser.uwmf@gmail.com' <>12")->result();
+//return $CI->db->query("SELECT * from users_responsabilities join users USING(user_respo_id) WHERE users.email!='superuser.uwmf@gmail.com' <>12")->result();
+return $CI->db->query("SELECT * from users_responsabilities")->result();
 }//end of function
 function getlastmessage($CI,$reg)
 {

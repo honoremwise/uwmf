@@ -78,7 +78,7 @@ class Cert_diploma_load_data extends CI_Controller //
 			);
 			// send to the model for database operation
 			//check if the session is valid
-			if (isset($_SESSION['username'])) {
+			if (isset($_SESSION['username'])){
 				$user=$_SESSION['username'];
 				$this->load->model('Register_certificate_diploma'); // load the model
 				$this->Register_certificate_diploma->registerBasicData($data);

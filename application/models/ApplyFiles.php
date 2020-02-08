@@ -53,7 +53,8 @@ class ApplyFiles extends CI_Model
         $this->load->view('certificate/work_experience.php');
       }else {
         $data=array('minimum_upload' => 'You did not submit all required uploads' );
-	      $this->load->view('views_pages/cert_diploma_program_uploads',$data);
+	      //$this->load->view('views_pages/cert_diploma_program_uploads',$data);
+        $this->load->view('views_pages/bachelor_master_program_uploads.php',$data);
       }
     }
   }//end of function

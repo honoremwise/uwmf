@@ -1,7 +1,4 @@
 <?php
-require_once(APPPATH.'views/certificate/include.php');
-require_once(APPPATH.'views/certificate/datareview.php');
-require_once(APPPATH.'views/views_pages/pageheader.php');
 if (empty($fname)) {
   $tel="";
   $date="";
@@ -9,6 +6,12 @@ if (empty($fname)) {
   $gender="";
 }
  ?>
+ <?php
+ require_once(APPPATH.'views/views_pages/pageheader.php');
+ require_once(APPPATH.'views/certificate/datareview.php');
+ require_once(APPPATH.'views/certificate/include.php');
+ ?>
+
 	<div class="container">
     <div class="row">
 			<div class="col-md-4"></div>
@@ -29,7 +32,7 @@ if (empty($fname)) {
 	        }
 	        ?>
 	      </div>
-				<form name="userapplicationmain" action="<?php echo base_url();?>index.php/Cert_diploma_load_data/" id="userapplicationmain" method="post">
+				<form name="userapplicationmain" action="<?php echo site_url();?>Cert_diploma_load_data/" id="userapplicationmain" method="post">
 					<div class="form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
 						<label for="firstname">Firstname</label><span id="error_fname"></span>
 						<input type="text" name="CandidateFname" class="form-control" id="CandidateFname" value="<?php echo $fname; ?>" required>
@@ -123,7 +126,7 @@ if (empty($fname)) {
 
 					<div class="form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
 						<label for="graduatedate">Date graduated</label><span id="error_graduatedate"></span>
-						<input type="text" name="candidategraduation" class="form-control" placeholder="yyy-mm-dd" value="<?php echo $grdate; ?>" id="candidategraduation" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter Date in format: yyy-mm-dd" required>
+						<input type="text" name="candidategraduation" class="form-control" placeholder="yyyy-mm-dd" value="<?php echo $grdate; ?>" id="candidategraduation" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter Date in format: yyy-mm-dd" required>
 					</div>
 					<div class="form-group col-xs-10 col-sm-10 col-md-6 col-lg-6">
 						<label for="school">School name</label><span id="error_schoolname"></span>
@@ -144,10 +147,10 @@ if (empty($fname)) {
 					<!-- submit button -->
 					<div class="clearfix"></div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <input type="submit" name="submitMainForm" value="Save and Continue" class="btn btn-primary pull-right">
+            <input type="submit" name="submitMainForm" value="Save and Continue" class="btn btn-outline btn-primary pull-right">
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="<?php echo base_url();?>index.php/Save_step?pageapplication" id="applicationidpage"class="btn btn-primary">Go next</a>
+            <a href="<?php echo site_url();?>Save_step?pageapplication" id="applicationidpage"class="btn btn-outline btn-primary">Go next</a>
           </div>
 				</form>
 			</div>

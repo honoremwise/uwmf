@@ -43,10 +43,10 @@ class Save_step extends CI_Controller
       // redirect to file upload
       switch ($result) {
         case '01':
-          $this->load->view('views_pages/cert_diploma_program_uploads.php');
+          $this->load->view('views_pages/bachelor_master_program_uploads.php');
           break;
         case '02':
-          $this->load->view('views_pages/cert_diploma_program_uploads.php');
+          $this->load->view('views_pages/bachelor_master_program_uploads.php');
           break;
         case '03':
           $this->load->view('views_pages/bachelor_master_program_uploads.php');
